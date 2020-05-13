@@ -13,6 +13,6 @@ Fork : https://github.com/egeriis/zipcelx
 3. [Contributing](https://github.com/dixieio/zipcelx/wiki/Contributing)
 
 ## Issues
-Should it happen that the tool broke down on you please head to our [Issue tracker](https://github.com/dixieio/zipcelx/issues)
+Should it happen that the tool broke down on you please head to our [Issue tracker](https://github.com/DavidRamos015/zipcelx-on-steroids/issues)
 1. Search if the issue is already discussed or explained.
 2. If no luck feel free to open a new issue and we will get back to you as soon as possible.
