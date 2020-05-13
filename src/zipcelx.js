@@ -22,12 +22,10 @@ export const generateXMLWorksheet = (rows, cols) => {
   return templateSheet.replace('{placeholder}', XMLRows).replace('{colsPlaceholder}', XMLCols);
 };
 
-export default (config, action) => 
-{
-  let error = validator(config, action);
-  if (error) 
-  {
-    throw new Error(error);    
+export default (config, action) => {
+  const error = validator(config, action);
+  if (error) {
+    throw new Error(error);
   }
 
   const zip = new JSZip();
@@ -49,14 +47,15 @@ export default (config, action) =>
       mimeType:
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     })
-    .then((blob) => 
-    {
-      if(action === "export" && config.filename)
+    .then((blob) => {
+      if (action === 'export' && config.filename) {
         return FileSaver.saveAs(blob, `${config.filename}.xlsx`);
-      
-      if (action === "blob")
+      }
+
+      if (action === 'blob') {
         return blob;
-      
+      }
+
       return null;
     });
 };
