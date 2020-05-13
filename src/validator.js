@@ -1,28 +1,44 @@
 import {
   INVALID_TYPE_FILENAME,
   INVALID_TYPE_SHEET,
-  INVALID_TYPE_SHEET_DATA
+  INVALID_TYPE_SHEET_DATA,
+  INVALID_ACTION
 } from './commons/constants';
 
-const childValidator = (array) => {
+const childValidator = (array) => 
+{
   return array.every(item => Array.isArray(item));
 };
 
-export default (config) => {
-  if (config.filename && typeof config.filename !== 'string') {
-    console.error(INVALID_TYPE_FILENAME);
-    return false;
+
+export default (config, action) => 
+{  
+  if (action !== "export" || action !== 'blob')
+  {
+    // throw new Error(INVALID_ACTION); 
+    return INVALID_ACTION;
   }
 
-  if (!Array.isArray(config.sheet.data)) {
-    console.error(INVALID_TYPE_SHEET);
-    return false;
+  if (action === "export")
+  {
+    if (!config.filename || typeof config.filename !== 'string')    
+    {
+      // throw new Error(INVALID_TYPE_FILENAME);
+      return INVALID_TYPE_FILENAME;
+    }
   }
 
-  if (!childValidator(config.sheet.data)) {
-    console.error(INVALID_TYPE_SHEET_DATA);
-    return false;
+  if (!Array.isArray(config.sheet.data)) 
+  {
+    // throw new Error(INVALID_TYPE_SHEET); 
+    return INVALID_TYPE_SHEET;
   }
 
-  return true;
+  if (!childValidator(config.sheet.data)) 
+  {
+    // throw new Error(INVALID_TYPE_SHEET_DATA); 
+    return INVALID_TYPE_SHEET_DATA;
+  }
+
+  return "";
 };
