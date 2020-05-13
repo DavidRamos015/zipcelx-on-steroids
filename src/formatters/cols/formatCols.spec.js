@@ -1,5 +1,5 @@
 import formatCol from '../../../src/formatters/cols/formatCol';
-import baseConfig from '../../baseConfig';
+import baseConfig from '../../../__test__/baseConfig';
 
 // 150px turns into 25 excel points according to the formulas in Microsoft docs (see Column Width chapter)
 // https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column.aspx

@@ -11,4 +11,3 @@ export const WARNING_INVALID_TYPE = 'Invalid type supplied in cell config, falli
 
 export const INVALID_ACTION = 'Zipclex unrecognized action';
 
-const WARNING_INVALID_TYPE = 'Invalid type supplied in cell config, falling back to "string"';

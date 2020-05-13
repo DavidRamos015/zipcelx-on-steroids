@@ -13,7 +13,7 @@ const childValidator = (array) =>
 
 export default (config, action) => 
 {  
-  if (action !== "export" || action !== 'blob')
+  if (action !== "export" && action !== 'blob')
   {
     // throw new Error(INVALID_ACTION); 
     return INVALID_ACTION;
