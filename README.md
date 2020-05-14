@@ -12,7 +12,7 @@ Fork : https://github.com/egeriis/zipcelx
 2. [The config object](https://github.com/dixieio/zipcelx/wiki/The-config-object)
 3. [Contributing](https://github.com/dixieio/zipcelx/wiki/Contributing)
 
-##Features
+## Features
 * Pull requests from community added 
 * now support action param  : 
     1. "export" : download as xlsx   
