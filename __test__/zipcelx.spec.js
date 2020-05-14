@@ -7,7 +7,7 @@ console.error = jest.genMockFn();
 
 describe('Zipcelx', () => {
   const rowsXML = `<row r="1"><c r="A1" t="inlineStr"><is><t>Test</t></is></c><c r="B1"><v>1000</v></c></row>`;
-  const colsXML = `<cols><col min="1" max="1" width="25" /><col min="2" max="2" width="10" /></cols>`;
+  const colsXML = `<cols><col min="1" max="1" width="25" style="1" /><col min="2" max="2" width="10" style="1" /></cols>`;
 
   it('Should throw error if validator fails', () => {
     let config = Object.assign({}, baseConfig, { sheet: { data: [{test: 'demo'}] } });

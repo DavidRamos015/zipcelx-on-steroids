@@ -3,7 +3,7 @@ import baseConfig from '../../../__test__/baseConfig';
 
 // 150px turns into 25 excel points according to the formulas in Microsoft docs (see Column Width chapter)
 // https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column.aspx
-const expectedXML = '<col min="1" max="1" width="25" />';
+const expectedXML = '<col min="1" max="1" width="25" style="1" />';
 
 describe('Format Col', () => {
   it('Should create one column from given data', () => {

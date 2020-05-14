@@ -9,5 +9,5 @@ export const INVALID_TYPE_SHEET_DATA = 'Zipclex sheet data childs is not of type
 
 export const WARNING_INVALID_TYPE = 'Invalid type supplied in cell config, falling back to "string"';
 
-export const INVALID_ACTION = 'Zipclex unrecognized action';
+export const INVALID_ACTION = 'Zipclex unrecognized action (should be export" or "blob")';
 

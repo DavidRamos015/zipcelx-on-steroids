@@ -21,6 +21,8 @@ export default (col, index) => {
   // =Truncate([{Number of Characters} * {Maximum Digit Width} + {5 pixel padding}]/{Maximum Digit Width}*256)/256
   const colWidth = Truncate((((characterWidth * maximumDigitWidth) + 5) / maximumDigitWidth) * 256) / 256;
 
+  const style = col.style ? col.style : 1;
+
   // `col` format is described here: https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column.aspx
-  return `<col min="${colIndex}" max="${colIndex}" width="${colWidth}" />`;
+  return `<col min="${colIndex}" max="${colIndex}" width="${colWidth}" style="${style}" />`;
 };

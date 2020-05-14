@@ -12,6 +12,14 @@ Fork : https://github.com/egeriis/zipcelx
 2. [The config object](https://github.com/dixieio/zipcelx/wiki/The-config-object)
 3. [Contributing](https://github.com/dixieio/zipcelx/wiki/Contributing)
 
+##Features
+* Pull requests from community added 
+* now support action param  : 
+    1. "export" : download as xlsx   
+    2. "blob" : return a blob object so you can use it as you need
+* Support column width and style (The possible values for this attribute are defined by the W3C XML Schema unsignedInt datatype)
+    col format is described here: https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column. aspx
+
 ## Issues
 Should it happen that the tool broke down on you please head to our [Issue tracker](https://github.com/DavidRamos015/zipcelx-on-steroids/issues)
 1. Search if the issue is already discussed or explained.
