@@ -21,13 +21,15 @@ Fork : https://github.com/egeriis/zipcelx
     col format is described here: https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column. aspx
 
 ## Config
-    See(https://github.com/egeriis/zipcelx/wiki/The-config-object) 
+    [look here in a meanwhile](https://github.com/egeriis/zipcelx/wiki/The-config-object) 
 
 ## Use
- import zipcelx from 'zipcelx-on-steroids'
+    ```
+        import zipcelx from 'zipcelx-on-steroids'
 
-* zipcelx(config,'export') to save as xlsx
-* zipcelx(config, 'blob') to return a blob oject
+        * zipcelx(config,'export') to save as xlsx
+        * zipcelx(config, 'blob') to return a blob oject
+```
 
 ## Issues
 Should it happen that the tool broke down on you please head to our [Issue tracker](https://github.com/DavidRamos015/zipcelx-on-steroids/issues)
