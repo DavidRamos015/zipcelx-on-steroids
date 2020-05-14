@@ -16,20 +16,20 @@ Fork : https://github.com/egeriis/zipcelx
 * Pull requests from community added 
 * now support action param  : 
     1. "export" : download as xlsx   
-    2. "blob" : return a blob object so you can use it as you need
+    2. "blob" : return a blob object so you can use it as you need.
 * Support column width and style (The possible values for this attribute are defined by the W3C XML Schema unsignedInt datatype)
-    col format is described here: https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column. aspx
+* Col format is described [here](https://msdn.microsoft.com/en-us/library/office/documentformat.openxml.spreadsheet.column. aspx)
 
 ## Config
-    [look here in a meanwhile](https://github.com/egeriis/zipcelx/wiki/The-config-object) 
+[Look here in a meanwhile](https://github.com/egeriis/zipcelx/wiki/The-config-object) 
 
 ## Use
-    ```
+    
         import zipcelx from 'zipcelx-on-steroids'
 
-        * zipcelx(config,'export') to save as xlsx
-        * zipcelx(config, 'blob') to return a blob oject
-```
+        zipcelx(config,'export') to save as xlsx
+        zipcelx(config, 'blob') to return a blob oject
+
 
 ## Issues
 Should it happen that the tool broke down on you please head to our [Issue tracker](https://github.com/DavidRamos015/zipcelx-on-steroids/issues)
