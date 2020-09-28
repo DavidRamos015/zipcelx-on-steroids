@@ -1,6 +1,18 @@
 zipcelx
 =======
 
+<p align="center">
+  <a href="https://raw.githubusercontent.com/davidramos-om/zipcelx-on-steroids/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://www.npmjs.com/package/zipcelx-on-steroids">
+    <img src="https://img.shields.io/npm/v/zipcelx-on-steroids.svg" alt="version" />
+  </a>
+  <a href="https://www.npmjs.com/package/zipcelx-on-steroids">
+    <img src="https://img.shields.io/npm/dt/zipcelx-on-steroids.svg" alt="downloads" />
+  </a>
+</p>
+
 Generate XLSX files in the browser, with minimal footprint. The vision is to provide the smallest possible package for generating valid XLSX files in the browser.
 
 If you're looking for advanced functionality, [js-xlsx](https://github.com/SheetJS/js-xlsx) is a solid choice.
