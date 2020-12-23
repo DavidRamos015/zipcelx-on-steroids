@@ -1,4 +1,4 @@
-import JSZip from 'jszip';
+import { strToU8, zip } from 'fflate';
 import FileSaver from 'file-saver';
 
 import validator from './validator';
@@ -28,34 +28,44 @@ export default (config, action) => {
     throw new Error(error);
   }
 
-  const zip = new JSZip();
-  const xl = zip.folder('xl');
-  xl.file('workbook.xml', workbookXML);
-  xl.file('_rels/workbook.xml.rels', workbookXMLRels);
-  zip.file('_rels/.rels', rels);
-  zip.file('[Content_Types].xml', contentTypes);
-
   // const worksheet = generateXMLWorksheet(config.sheet.data);
-  // xl.file('worksheets/sheet1.xml', worksheet);
-
   const worksheet = generateXMLWorksheet(config.sheet.data, config.sheet.cols);
-  xl.file('worksheets/sheet1.xml', worksheet);
 
-  return zip
-    .generateAsync({
-      type: 'blob',
-      mimeType:
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    })
-    .then((blob) => {
-      if (action === 'export' && config.filename) {
-        return FileSaver.saveAs(blob, `${config.filename}.xlsx`);
+  const zipContent = {
+    xl: {
+      'workbook.xml': strToU8(workbookXML),
+      '_rels/workbook.xml.rels': strToU8(workbookXMLRels),
+      'worksheets/sheet1.xml': strToU8(worksheet),
+    },
+    '_rels/.rels': strToU8(rels),
+    '[Content_Types].xml': strToU8(contentTypes),
+  };
+
+  return new Promise((resolve, reject) => {
+    zip(
+      zipContent,
+      (err, data) => {
+        if (err) {
+          return reject(err);
+        }
+
+        return resolve(
+          new Blob([data.buffer], {
+            type:
+              'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          })
+        );
       }
+    );
+  }).then((blob) => {
+    if (action === 'export' && config.filename) {
+      return FileSaver.saveAs(blob, `${config.filename}.xlsx`);
+    }
 
-      if (action === 'blob') {
-        return blob;
-      }
+    if (action === 'blob') {
+      return blob;
+    }
 
-      return null;
-    });
+    return null;
+  });
 };
